@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CureRx - Medicine Store</title>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+    }
+    header {
+      background-color: #6fa2a9;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      font-size: 18px;
+    }
+    nav a:hover {
+      background-color: #6fa2a9;
+    }
+    section {
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+    #home {
+      /*   */
+      text-align: center;
+      background-image: url('https://img.freepik.com/free-photo/frame-medical-equipment-desk_23-2148519742.jpg?t=st=1745248562~exp=1745252162~hmac=e9f5be0ed97b81ffcdd6f5d7847828fd824c730465663fce3ae897667a98ccd7&w=1380');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      
+    }
+    #home h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      /* color: white; */
+    }
+    #products {
+      background-image: url('https://img.freepik.com/free-photo/medical-equipment-with-copy-space_23-2148519736.jpg?t=st=1745248626~exp=1745252226~hmac=915680e91ae72001b53d69de866df0c551b974e2d8634ea816d6f3acb0176b71&w=1380');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .product-h1{
+      text-align: center;
+      font-size: 50px;
+    }
+    .product-flex{
+      display: flex ;
+    }
+    .medicine {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .medicine h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .medicine p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .medicine button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .medicine button:hover {
+      background-color: #45a049;
+    }
+    #cart {
+      background: white;
+      padding: 20px;
+      margin: 40px auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #cart h2 {
+      margin-bottom: 10px;
+    }
+    #cartItems {
+      list-style-type: none;
+      margin: 10px 0;
+      padding: 0;
+    }
+    #cartItems li {
+      margin: 5px 0;
+    }
+    #container{
+  width: 80%;
+  margin: 50px;
+  justify-items: center;
+  
+}
+.contact-box{
+  background-color: #fff;
+  display: flex;
+  /* flex-direction:column ; */
+}
+.contact-left{
+flex-basis: 60%;
+padding: 40px 50px;
+}
+.contact-right{
+  flex-basis: 40%;
+  padding: 40px;
+  background-color: #6fa2a9;
+  color: black;
+}
+h1{
+  margin-bottom: 10px;
+}
+.container p{
+  margin-bottom: 40px;
+}
+.input-row{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.input-row .input-group{
+  flex-basis: 45%;
+}
+input{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+}
+textarea{
+  width: 100%;
+  border: 1px solid;
+  padding: 10px;
+  outline: none;
+  box-sizing: border-box;
+}
+label{
+  display: block;
+  margin-bottom: 6px;
+  color: #1c0051;
+}
+button{
+  width: 100px;
+  border: none;
+  outline: none;
+  background-color: #6fa2a9;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 3px 15px 0px grey;
+}
+.contact-left h3{
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.contact-right h3{
+  /* color: #0d953a; */
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+tr td:first-child{
+  padding-right: 10px;
+  
+}
+tr td{
+  padding-top: 20px;
+  font-size:large;
+}
+  </style>
+</head>
+
+<body>
+
+  <header>CureRx</header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#container">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h1>Welcome to CureRx</h1>
+    <p>Your trusted partner in health and wellness.</p>
+  </section>
+
+  <section id="products">
+    
+    <h1 class="product-h1">Our Products</h1><br><br>
+    <div class="product-flex">
+    <div class="medicine">
+      <h2>Paracetamol</h2>
+       <p>Paracetamol is a common painkiller and fever reducer, used for headaches, colds, and mild pain. Take as prescribed.</p>
+      <button onclick="addToCart('Paracetamol')">Add to Cart</button>
+    </div>
+
+    <div class="medicine">
+      <h2>Ibuprofen</h2>
+      <p>Ibuprofen is a anti-inflammatory drug (NSAID) used to reduce pain,feaver and inflammation in various conditions.</p>
+      <button onclick="addToCart('Ibuprofen')">Add to Cart</button>
+    </div>
+
+    <div class="medicine">
+      <h2>Amoxicillin</h2>
+      <p>Amoxicillin is a widely used antibiotic that treats bacterial infections like ear and urinary tract infections. Take as prescribed.</p>
+      <button onclick="addToCart('Amoxicillin')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-flex">
+    <div class="medicine">
+      <h2>Cetirizine</h2>
+      <p>Cetirizine is an antihistamine used to relieve allergy symptoms like sneezing, runny nose, and itching. It may cause drowsiness..</p>
+      <button onclick="addToCart('Cetirizine')">Add to Cart</button>
+    </div>
+
+    <div class="medicine">
+      <h2>Aspirin</h2>
+      <p>Aspirin is a pain reliever and anti-inflammatory drug. It also reduces fever and prevents blood clots in heart-related conditions..</p>
+      <button onclick="addToCart('Aspirin')">Add to Cart</button>
+    </div>
+    
+    <!-- Additional Medicines -->
+    <div class="medicine">
+      <h2>Allergy Relief</h2>
+      <p>Allergy relief medicines help reduce symptoms like sneezing, itching, and runny nose. Ex- antihistamines, decongestants, and nasal sprays.</p>
+      <button onclick="addToCart('Allergy Relief')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-flex">
+    <div class="medicine">
+      <h2>Pain Relief Gel</h2>
+      <p>TPain relief gel is a topical medication used to ease muscle, joint, or back pain. It provides quick, localized relief.</p>
+      <button onclick="addToCart('Pain Relief Gel')">Add to Cart</button>
+    </div>
+    
+    <div class="medicine">
+      <h2>Digestive Tablets</h2>
+      <p>Digestive tablets help relieve indigestion, bloating, and gas.They often contain enzymes or antacids to support healthy digestion.</p>
+      <button onclick="addToCart('Digestive Tablets')">Add to Cart</button>
+    </div>
+    
+    <div class="medicine">
+      <h2>Skin Cream</h2>
+      <p>Skin cream moisturizes, nourishes, and protects the skin. It helps treat dryness, irritation, and conditions like eczema or psoriasis.</p>
+      <button onclick="addToCart('Skin Cream')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-flex">
+    <div class="medicine">
+      <h2>Vitamin C</h2>
+      <p>Vitamin C is an essential antioxidant that supports immune function, skin health, and wound healing. Found in citrus fruits and vegetables.</p>
+      <button onclick="addToCart('Vitamin C')">Add to Cart</button>
+    </div>
+    
+    <div class="medicine">
+      <h2>Metformin</h2>
+      <p>Metformin is an oral medication used to manage type 2 diabetes by lowering blood sugar levels and improving insulin sensitivity.</p>
+      <button onclick="addToCart('Antacid')">Add to Cart</button>
+    </div>
+    <div class="medicine">
+      <h2>Loratadine</h2>
+      <p>Loratadine is an antihistamine used to treat allergy symptoms like sneezing, runny nose, and itching without causing drowsiness.</p>
+      <button onclick="addToCart('Antacid')">Add to Cart</button>
+    </div>
+  </div>
+    <div id="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cartItems"></ul>
+      <button onclick="clearCart()">Clear Cart</button>
+    </div>
+   </section>
+
+  <!-- <section id="contact">
+    <p>Contact: +1 234 567 890 | email@curerx.com</p>
+  </section> -->
+  <div id="container">
+    <h1>
+      Connect with us
+    </h1>
+    <div class="contact-box">
+      <div class="contact-left">
+<h3>send your request</h3>
+<form>
+  <div class="input-row">
+    <div class="input-group">
+      <label >Name</label>
+      <input type="text" placeholder="John doe">
+    </div>
+      <div class="input-group">
+        <label >Phone</label>
+        <input type="number" placeholder="+91724341236">
+    </div>
+  </div>
+    <div class="input-row">
+    <div class="input-group">
+      <label >email</label>
+      <input type="email" placeholder="enter email">
+  </div>
+  <div class="input-group">
+    <label >subject</label>
+    
+    <input type="text" placeholder="describe">
+</div>
+    </div>
+    <label> message</label>
+    <textarea rows="10"></textarea>
+    <button>SEND</button>
+</form>
+      </div>
+      <div class="contact-right">
+<h3>Reach us </h3>
+<table>
+  <tr>
+    <td>email</td>
+    <td>amitkumar@gmail.com</td>
+</tr>
+<tr>
+  <td>phone</td>
+  <td>+91 7205838689 . +91 6371365627</td>
+  
+</tr>
+<tr>
+  <td class="horizontal-contact">address</td>
+  <td>located in Bhubaneswar, near the Fire Station. Our pharmacy is situated on Ruchika market, IT ensures convenience for our customers. Our proximity to the Fire Station makes it easy for local residents and visitors to find us.
+    <pre>
+Location: CureRX
+Near Fire Station, Ruchika market,
+Bhubaneswar,751003, Odisha, India. </pre></td>
+</tr>
+</table>
+      </div>
+    </div>
+   </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(medicine) {
+      cart.push(medicine);
+      displayCart();
+    }
+
+    function displayCart() {
+      const cartItems = document.getElementById('cartItems');
+      cartItems.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        cartItems.appendChild(li);
+      });
+    }
+
+    function clearCart() {
+      if (confirm('Are you sure you want to clear the cart?')) {
+        cart = [];
+        displayCart();
+      }
+    }
+  </script>
+
+</body>
+</html>
